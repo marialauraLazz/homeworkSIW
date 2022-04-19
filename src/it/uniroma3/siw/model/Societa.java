@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+//ho lasciato le strategie di fetch standard delle associazioni, non ho messo eventi a cascata
+
 @Entity
 public class Societa {
 	
@@ -19,6 +21,7 @@ public class Societa {
 	private char indirizzoSede;
 	private String ragione;
 	private int numero;
+	
 	public Long getId() {
 		return id;
 	}

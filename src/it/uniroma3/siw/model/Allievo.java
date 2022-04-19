@@ -14,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+//ho lasciato le strategie di fetch standard delle associazioni, non ho messo eventi a cascata
+
 @Entity
 public class Allievo {
 	
@@ -32,7 +34,7 @@ public class Allievo {
 	@ManyToOne
 	private Societa societa;
 	
-	@ManyToMany(mappedBy = "allievi", fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy = "allievi")
 	private List<Corso> corsi;
 
 	public int getMatricola() {

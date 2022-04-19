@@ -12,5 +12,4 @@ public class ProjectMain {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("products-unit");
 		EntityManager em = emf.createEntityManager();
 	}
-	/*ho lasciato le strategie di fetch standard delle associazioni, per gli eventi a cascata ho messo solamente quello tra docente e corso perche non esiste corso senza docente che lo insegni*/
 }

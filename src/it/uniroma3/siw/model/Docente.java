@@ -6,10 +6,13 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+//ho cambiato la strategia di fetch della onetomany in eager per avere i dati dei corsi insegnati dal docente, per gli eventi a cascata ho messo solamente quello tra docente e corso perchè non esiste corso senza docente che lo insegni
 
 @Entity
 public class Docente {
@@ -25,7 +28,7 @@ public class Docente {
 	private String luogonascia;
 	private char piva;
 	
-	@OneToMany(mappedBy = "docente", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToMany(mappedBy = "docente",  fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	private List<Corso> corsi;
 
 	public Long getId() {

@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+//ho lasciato le strategie di fetch standard delle associazioni, non ho messo eventi a cascata
+
 @Entity
 public class Corso {
 	
